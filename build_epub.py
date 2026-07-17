@@ -123,10 +123,14 @@ BLOCK_TAGS = {
 }
 
 
-def _inside_p(el):
+# block content is invalid inside <p> or inside any inline element
+INLINE_TAGS = {"p", "a", "span", "em", "strong", "b", "i", "u", "s", "sup", "sub", "code"}
+
+
+def _inside_inline(el):
   anc = el.getparent()
   while anc is not None:
-    if anc.tag == "p":
+    if anc.tag in INLINE_TAGS:
       return True
     anc = anc.getparent()
   return False
@@ -161,7 +165,7 @@ def sanitize(fragment_html, base_url=""):
     while again:
       again = False
       for el in tree.iter():
-        if isinstance(el.tag, str) and el.tag in BLOCK_TAGS and _inside_p(el):
+        if isinstance(el.tag, str) and el.tag in BLOCK_TAGS and _inside_inline(el):
           el.drop_tag()
           again = True
           break
