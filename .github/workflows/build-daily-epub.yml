@@ -1,0 +1,43 @@
+name: Build daily epub
+
+on:
+  schedule:
+    # 21:15 UTC = 5:15 AM AWST — edition is ready well before 6 AM
+    - cron: "15 21 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-daily-epub
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Build edition
+        run: python build_epub.py
+
+      - name: Commit and push
+        run: |
+          git config user.name "news-reader-bot"
+          git config user.email "news-reader-bot@users.noreply.github.com"
+          git add daily.epub archive/ state/ build-report.md
+          if git diff --cached --quiet; then
+            echo "Nothing to commit"
+          else
+            git commit -m "Edition $(TZ=Australia/Perth date +%F)"
+            git push
+          fi

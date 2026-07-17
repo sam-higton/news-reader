@@ -1,0 +1,30 @@
+{
+  "settings": {
+    "title": "Daily News",
+    "timezone": "Australia/Perth",
+    "windowHours": 24
+  },
+  "categories": [
+    {
+      "name": "Games",
+      "feeds": [
+        { "name": "Rock Paper Shotgun — News", "url": "https://www.rockpapershotgun.com/feed/news" },
+        { "name": "Rock Paper Shotgun — Reviews", "url": "https://www.rockpapershotgun.com/feed/reviews" },
+        { "name": "Eurogamer — News", "url": "https://www.eurogamer.net/feed/news" },
+        { "name": "Eurogamer — Reviews", "url": "https://www.eurogamer.net/feed/reviews" }
+      ]
+    },
+    {
+      "name": "World News",
+      "feeds": [
+        { "name": "BBC News — World", "url": "https://feeds.bbci.co.uk/news/world/rss.xml" }
+      ]
+    },
+    {
+      "name": "Motorsport",
+      "feeds": [
+        { "name": "Autosport", "url": "https://www.autosport.com/rss/all/news/" }
+      ]
+    }
+  ]
+}
