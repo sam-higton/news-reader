@@ -1,12 +1,12 @@
 # Build report
 
-Last run: 2026-10-06 09:46 AWST — 42 article(s) in the edition.
+Last run: 2026-10-07 08:44 AWST — 53 article(s) in the edition.
 
 | Category | Feed | Status | New articles | Notes |
 |---|---|---|---|---|
-| Games | Rock Paper Shotgun — News | OK | 7 |  |
-| Games | Rock Paper Shotgun — Reviews | OK | 0 |  |
-| Games | Eurogamer — News | OK | 12 |  |
+| Games | Rock Paper Shotgun — News | OK | 13 |  |
+| Games | Rock Paper Shotgun — Reviews | OK | 1 |  |
+| Games | Eurogamer — News | OK | 8 |  |
 | Games | Eurogamer — Reviews | OK | 0 |  |
-| World News | BBC News — World | OK | 18 |  |
+| World News | BBC News — World | OK | 26 |  |
 | Motorsport | Autosport | OK | 5 |  |
